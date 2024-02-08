@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Videos </title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+        @media print {
+        .table, .table__body {
+        overflow: visible;
+        height: auto !important;
+        width: auto !important;
+        }
+        }
+            
+        video {
+            align-items: center;
+        }
+            
+    </style>
+</head>
+<body>
+    <table class="table">
+        {% for video in sourceVideo %}
+        <div class="video">
+            <video  width="740" height="480" controls loop>
+                <source src="/media/{{video.video}}">
+                <!-- <source src="movie.ogg" type="video/ogg"> -->
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        {% endfor %}
+    </table>
+</body>
+</html>
